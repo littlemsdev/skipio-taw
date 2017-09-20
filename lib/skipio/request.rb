@@ -6,6 +6,11 @@ class Request
       response, status = get_json(resource_path, cache_params)
       status == 200 ? response : errors(response)
     end
+    
+    def get(id, cache)
+      response, status = get_json(id, cache)
+      status == 200 ? response : errors(response)
+    end
 
     def errors(response)
       error = { errors: { status: response["status"], message: response["message"] } }

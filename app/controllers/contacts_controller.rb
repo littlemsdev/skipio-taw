@@ -6,11 +6,23 @@ class ContactsController < ApplicationController
   end
 
   def show
+    @contact = Skipio::Contact.find(params[:id])
   end
 
   def send_message
+    phone_mobile = sprintf("%+d", params[:pm])
     respond_to do |format|
-      Skipio::Notifier.send_sms
+      Skipio::Notifier.send_sms(phone_mobile)
+      format.html{}
+    end
+  end
+
+  def send_custom_message
+    phone_mobile = sprintf("%+d", params[:pm])
+    c_message = params[:msg]
+
+    respond_to do |format|
+      Skipio::Notifier.send_custom_sms(phone_mobile, c_message)
       format.html{}
     end
   end

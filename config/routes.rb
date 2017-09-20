@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :contacts do
     collection do
       get 'send_message'
+      get 'send_custom_message'
     end
   end
 

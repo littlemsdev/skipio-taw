@@ -43,7 +43,6 @@ gem 'pry-rails'
 
 # For UI
 gem 'bootstrap', '~> 4.0.0.alpha6'
-gem 'bootstrap-sass', '~> 3.3.6'
 gem 'popper_js', '~> 1.11', '>= 1.11.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,0 +1,43 @@
+section.jumbotron.text-center
+  .container
+    h1.jumbotron-heading Single Contact
+    p.lead.text-muted= @contact.full_name
+    p
+      a.btn.btn-info href="/"  Back to Main page
+
+.album.text-muted
+  .container
+    .row
+      .col-lg-4
+        img.rounded-circle alt=("Avatar") height="140" src="#{@contact.avatar_url}" width="140" /
+      .col-lg-6
+        table.table.table-bordered
+          thead.thead-inverse
+            tr
+              th First Name
+              td= @contact.first_name
+            tr
+              th Last Name
+              td= @contact.last_name
+            tr
+              th Email
+              td= @contact.email
+            tr
+              th Mobile Phone
+              td= @contact.phone_mobile
+            tr
+              th Send Custom Message
+              td
+                textarea name="msg" cols="50" rows="4" class="msg"
+
+          tfoot
+            tr
+              td colspan="2"
+                a.btn.btn-sm.btn-primary.btn-block.send_msg href="/contacts/send_custom_message?pm=#{@contact.phone_mobile}" Send
+
+javascript:
+  $(".send_msg").click(function() {
+    $(this).attr("href", function() {
+      return this.href + "&msg=" + $('.msg').val();
+    });
+  });
