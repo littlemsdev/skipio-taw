@@ -1,0 +1,17 @@
+defaults: &defaults
+  twilio:
+    account_sid: AC68d1931f2399be1dd68f606b7544d9da
+    auth_token: 07568bea3af36f59d16322450900ab86
+    main_number: +18284080656
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+clean:
+  <<: *defaults
