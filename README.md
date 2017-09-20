@@ -11,3 +11,6 @@ Contact Lists with automated send message button
 
 Single Contact with Custom Message
 ![solarized palette](https://i.gyazo.com/4e4739cc5add8e9845aec7d846608976.png)
+
+Successfull message sent page
+![solarized palette](https://i.gyazo.com/1a206dae1376a0786a8c5955924d7453.png)
